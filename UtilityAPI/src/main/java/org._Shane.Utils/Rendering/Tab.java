@@ -1,7 +1,6 @@
 package org._Shane.Utils.Rendering;
 
 import org._Shane.Utils.ReflectionResource.APIReflection;
-import org._Shane.Utils.Other.Misc;
 import org.bukkit.entity.Player;
 
 import java.lang.reflect.Field;
@@ -24,8 +23,8 @@ public class Tab
             Method aChatSerializer = ChatSerializer.getDeclaredMethod("a", new Class[] { String.class });
 
             Object packet = Packet.newInstance();
-            Object head = aChatSerializer.invoke(null, new Object[]{Misc.Minecraft_JSON_Message(header)});
-            Object foot = aChatSerializer.invoke(null, new Object[]{Misc.Minecraft_JSON_Message(footer)});
+            Object head = aChatSerializer.invoke(null, new Object[]{header});
+            Object foot = aChatSerializer.invoke(null, new Object[]{footer});
 
             Field hField = packet.getClass().getDeclaredField("a");
             hField.setAccessible(true);
