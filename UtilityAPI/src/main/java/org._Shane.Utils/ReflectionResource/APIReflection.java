@@ -140,6 +140,7 @@ public class APIReflection
      *
      * @param entity Entity's class to get it's DataWatcher method.
      * @param text Text to change Entity's dataWatcher. (Bit new to DataWatcher, need to look more into it.)
+     * Currently used only for EnderDragons DataWatcher. Will in the future either make this more accessable, or pirvated to the BossBar class.
      */
     public static void changeDW(Object entity, String text)
     {
