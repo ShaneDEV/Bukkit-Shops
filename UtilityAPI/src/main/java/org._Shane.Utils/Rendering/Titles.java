@@ -22,7 +22,7 @@ public class Titles
      *
      * @param player Player to send packet to.
      * @param message Message to be rendered when packet is successfully sent.
-     * @param type Type to declare Title Actions.
+     * @param type Type of Title Action.
      * @param fadeIn Time (Millis) to fade in.
      * @param stay Time (Millis) to stay rendered.
      * @param fadeOut Time (Millis) to fade out.
