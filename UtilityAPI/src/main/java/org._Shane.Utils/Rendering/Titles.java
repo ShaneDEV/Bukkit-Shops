@@ -1,7 +1,6 @@
 package org._Shane.Utils.Rendering;
 
 import org._Shane.Utils.ReflectionResource.APIReflection;
-import org._Shane.Utils.Other.Misc;
 import org.bukkit.entity.Player;
 
 import java.lang.reflect.Field;
@@ -17,12 +16,12 @@ public class Titles
         RESET */
 
 
-    
+
     /**
      *
      * @param player Player to send packet to.
      * @param message Message to be rendered when packet is successfully sent.
-     * @param type Type of Title Action.
+     * @param type Type to declare Title Actions.
      * @param fadeIn Time (Millis) to fade in.
      * @param stay Time (Millis) to stay rendered.
      * @param fadeOut Time (Millis) to fade out.
@@ -38,7 +37,7 @@ public class Titles
             Field f = ETitleAction.getDeclaredField(type);
             f.setAccessible(true);
 
-            Object o = aChatSerializer.invoke(null, new Object[] {Misc.Minecraft_JSON_Message(message)});
+            Object o = aChatSerializer.invoke(null, new Object[] {message});
             Object packet = PacketPlayOutTitle.getConstructor(new Class[] {ETitleAction, IChatBaseComponent, Integer.TYPE, Integer.TYPE, Integer.TYPE}).newInstance(f.get(ETitleAction), IChatBaseComponent.cast(o), Integer.valueOf(fadeIn), Integer.valueOf(stay), Integer.valueOf(fadeOut));
             APIReflection.sendPacket(player, packet);
         } catch (Exception e)
@@ -47,4 +46,5 @@ public class Titles
         }
     }
 }
+
 
