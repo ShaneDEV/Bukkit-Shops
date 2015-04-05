@@ -11,7 +11,7 @@ public class Misc
 {
     /**
      * @param input Regular message turned into JSON message for ChatSerializer to use.
-     * @return input after json being added.
+     * @return input after very simple json being added. More to be added soon.
     */
     public static String Minecraft_JSON_Message(String input)
     {
