@@ -10,15 +10,15 @@ import java.util.List;
 public class Misc
 {
     /**
-     * @param input Regular message turned into JSON message for ChatSerializer to use.
-     * @return input after very simple json being added. More to be added soon.
+     * @param input Regular message turned into a clickable message; When players click this message, they will perform the command desired.
+     * @return the new link message.
     */
-    public static String Minecraft_JSON_Message(String input)
+    public static String toMCLink(String input, boolean messageUnderlined, String commandToRun)
     {
-        input = "{\"text\" : \"" + ChatColor.translateAlternateColorCodes('&', input) + "\"}";
+        input = "{text:\"" + colourize(input) + "\", underlined:" + messageUnderlined + ", clickEvent:{ action:run_command, value:\"" + commandToRun + "\" }}";        
         return input;
     }
-
+    
     /**
      *
      * @param input Regular message containing char '&' will be turned into a Minecraft ColorCode EX: &7 -> (§7 / ChatColor.GRAY).
