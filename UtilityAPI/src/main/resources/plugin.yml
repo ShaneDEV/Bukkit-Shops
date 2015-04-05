@@ -1,1 +1,4 @@
-
+name: UtilityAPI
+version: 0.7.1
+main: org._Shane.Utils.Core.UtilityPlugin
+description: Utility plugin - api for developers in need of what could have been a time consuming resource.
